@@ -1,0 +1,25 @@
+v 4
+file . "regcarga.vhdl" "c2667a5e2f983bfde9db5b8903eab66473124253" "20250219231325.817":
+  entity regcarga at 1( 0) + 0 on 145;
+  architecture reg1bit of regcarga at 14( 204) + 0 on 146;
+file . "regcarga8bits.vhdl" "8400a8ac7852dad030b604da36e5c3f149b175fe" "20250219231325.817":
+  entity regcarga8bits at 1( 0) + 0 on 143;
+  architecture reg8bits of regcarga8bits at 15( 286) + 0 on 144;
+file . "neander_MEMORIA.vhdl" "3d74bcf9e20755e6b14e04d3c0da305d136fffc5" "20250219231325.816":
+  entity modulomem at 1( 0) + 0 on 141;
+  architecture dostoragestuff of modulomem at 17( 459) + 0 on 142;
+file . "mux2x8.vhdl" "416a4ddc9cc024f278ccd301f795b45cf499f9d9" "20250219231325.814":
+  entity mux2x8 at 1( 0) + 0 on 139;
+  architecture comutacao of mux2x8 at 14( 310) + 0 on 140;
+file . "mux2x1.vhdl" "bce8610ed8dc6fe6318796ab4b7cd019449d0501" "20250219231325.814":
+  entity mux2x1 at 1( 0) + 0 on 137;
+  architecture comutacao of mux2x1 at 14( 249) + 0 on 138;
+file . "ffjkD.vhdl" "3a614ff1939d5eb21ae63cebc77fbda6565bd636" "20250219231325.813":
+  entity ffjkd at 1( 0) + 0 on 135;
+  architecture ffd of ffjkd at 12( 186) + 0 on 136;
+file . "tb_as_ram.vhdl" "bfefe731229ad8ce9415f071d736bf321b0ab039" "20250219231325.819":
+  entity tb_as_ram at 1( 0) + 0 on 147;
+  architecture tb_behavior of tb_as_ram at 9( 126) + 0 on 148;
+file . "as_ram.vhdl" "3f73ba77f28abe495e9836860db5e4964f04d021" "20250219231325.812":
+  entity as_ram at 2( 42) + 0 on 133;
+  architecture behavior of as_ram at 16( 325) + 0 on 134;

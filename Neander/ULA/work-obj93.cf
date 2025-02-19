@@ -1,0 +1,37 @@
+v 4
+file . "somadorCompleto.vhdl" "456eb9dbc3550d352738de7d6ad5ebdc2cbcd96e" "20250219231335.169":
+  entity somadorcompleto at 1( 0) + 0 on 81;
+  architecture soma of somadorcompleto at 10( 163) + 0 on 82;
+file . "Somador8bits.vhdl" "52eadee4b0bcd7d07a99aec460b9dfa99487b63d" "20250219231335.167":
+  entity somador8bits at 1( 0) + 0 on 79;
+  architecture comportamento of somador8bits at 15( 391) + 0 on 80;
+file . "regcarga.vhdl" "0904bbc9e89f30a941e4a567aa6709f55f702853" "20250219231335.165":
+  entity regcarga at 1( 0) + 0 on 77;
+  architecture reg1bit of regcarga at 14( 204) + 0 on 78;
+file . "regcarga8bits.vhdl" "9dd99404534a1be8873e2f979642729f5262ac0d" "20250219231335.164":
+  entity regcarga8bits at 1( 0) + 0 on 75;
+  architecture reg8bits of regcarga8bits at 15( 282) + 0 on 76;
+file . "regcarga2bits.vhdl" "8c42926c70e51fe4f8a2a63702bd8db5bd35ad02" "20250219231335.162":
+  entity regcarga2bits at 1( 0) + 0 on 73;
+  architecture reg2bits of regcarga2bits at 15( 282) + 0 on 74;
+file . "OpLogicos8bits.vhdl" "55fc7b5284d4c6cd80f3dc92a60d0b4f3cf5fc32" "20250219231335.160":
+  entity oplogicos8bits at 1( 0) + 0 on 71;
+  architecture comportamento of oplogicos8bits at 14( 365) + 0 on 72;
+file . "neander_ULA.vhdl" "0a795902048c759f02a09de3e8ce7d058ac054c9" "20250219231335.159":
+  entity moduloula at 2( 82) + 0 on 69;
+  architecture domathstuff of moduloula at 16( 478) + 0 on 70;
+file . "neander_ula_interno.vhdl" "408cbcb0d2f95a9b5ed12c5e32aa4070b5ae8521" "20250219231335.156":
+  entity moduloulainterno at 2( 82) + 0 on 67;
+  architecture domathstuff of moduloulainterno at 14( 412) + 0 on 68;
+file . "mux5x8.vhdl" "24f2e6941b86da9bf46e57d310d71841717ca7e3" "20250219231335.153":
+  entity mux5x8 at 1( 0) + 0 on 65;
+  architecture comutacao of mux5x8 at 18( 512) + 0 on 66;
+file . "mux2x1.vhdl" "bce8610ed8dc6fe6318796ab4b7cd019449d0501" "20250219231335.151":
+  entity mux2x1 at 1( 0) + 0 on 63;
+  architecture comutacao of mux2x1 at 14( 249) + 0 on 64;
+file . "ffjk.vhdl" "c8bce2e942cbd2742abf1196c7ad9dbd1e16257c" "20250219231335.150":
+  entity ffjk at 1( 0) + 0 on 61;
+  architecture ff of ffjk at 11( 181) + 0 on 62;
+file . "ffjkD.vhdl" "3a614ff1939d5eb21ae63cebc77fbda6565bd636" "20250219231335.147":
+  entity ffjkd at 1( 0) + 0 on 59;
+  architecture ffd of ffjkd at 12( 186) + 0 on 60;
