@@ -1,0 +1,13 @@
+v 4
+file . "Somador8bits.vhdl" "52eadee4b0bcd7d07a99aec460b9dfa99487b63d" "20250226173244.033":
+  entity somador8bits at 1( 0) + 0 on 17;
+  architecture comportamento of somador8bits at 15( 391) + 0 on 18;
+file . "regcarga8bits.vhdl" "228b175e7582ecce66e93ba329ffb998ec7ee5a3" "20250226173244.032":
+  entity regcarga8bits at 1( 0) + 0 on 15;
+  architecture reg8bits of regcarga8bits at 15( 286) + 0 on 16;
+file . "neander_uc_interno.vhdl" "c8a0d9d204236de949dec681e226b77bebaa4015" "20250226173244.027":
+  entity modulopc at 2( 71) + 0 on 13;
+  architecture dopointstuff of modulopc at 15( 383) + 0 on 14;
+file . "mux2x8.vhdl" "416a4ddc9cc024f278ccd301f795b45cf499f9d9" "20250226173244.026":
+  entity mux2x8 at 1( 0) + 0 on 11;
+  architecture comutacao of mux2x8 at 14( 310) + 0 on 12;
