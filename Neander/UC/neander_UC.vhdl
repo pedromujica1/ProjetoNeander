@@ -84,11 +84,9 @@ begin
     "00000000100" when s_ri2dec = "10010000" else -- JN
     "00000000010" when s_ri2dec = "10100000" else -- JZ
     "00000000001" when s_ri2dec = "11110000" else -- HLT
-
-
     -- contador
 
     -- Unidade de Controle
-    
+
 
 end architecture docontrolstuff;
