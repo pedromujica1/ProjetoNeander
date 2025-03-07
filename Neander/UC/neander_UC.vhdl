@@ -37,6 +37,23 @@ architecture docontrolstuff of moduloUC is
 	    );
     end component;
 
+    component contador is
+        port(
+            clock_cont, reset_cont, pr_cont: in std_logic;        
+            q_cont : out std_logic_vector(2 downto 0)
+    
+        );
+    end component;
+
+    component LDA is 
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(7 downto 0);
+            --signal b_ctrl 
+        );
+    end component LDA;
+    
+
     -- componente UC-interno
     component moduloPC is
         port(
@@ -71,11 +88,9 @@ begin
 
 
     -- decodificador 4 para 11
-   
     s_dec2uc <= "10000000000" when s_ri2dec = "00000000" else --NOP
     "01000000000" when s_ri2dec = "00010000" else -- STA
     "00100000000" when s_ri2dec = "00100000" else -- LDA
-
     "00010000000" when s_ri2dec = "00110000" else -- ADD
     "00001000000" when s_ri2dec = "01000000" else -- OR
     "00000100000" when s_ri2dec = "01010000" else -- AND
@@ -83,10 +98,30 @@ begin
     "00000001000" when s_ri2dec = "10000000" else -- JMP
     "00000000100" when s_ri2dec = "10010000" else -- JN
     "00000000010" when s_ri2dec = "10100000" else -- JZ
-    "00000000001" when s_ri2dec = "11110000" else -- HLT
+    "00000000001" when s_ri2dec = "11110000" -- HLT
+
     -- contador
 
+
     -- Unidade de Controle
+    S_ctrl <= sLDA when s_dec2uc = "00100000000" else --todas as outras instruções;
+
+    u_lda: LDA port map (s_ciclo,sLDA);
+
+    --arquivo LDA
+    entity LDA 
+    --port map
+    architecture dosomething of LDA
+
+    s(0) <=  '1'; --barrINC
+    s(1) <= not c(2) or c(2) or not c(9); --barrPC
+    s(4 downto 2) <= "000"; --ULA_OP
+    s(5) <= not (c(1))  and (c(2) xor c(0)); --PC_NRW
+    s(6) <= c(2) or c(1) or c(0); --AC_NRW
+    s(7) <= '0'; --MEM_NRW
+    s(8) <= (not c(1) and (c(2) xnor c(0))) or (not(c(2) and c(1) and c(0))) --rem_nrw
+    s(9) <= (c(2) and not (c(0)) or (not(c(2)) and not(c(1)) and c(0)))
+    s(10) <= not c(2) and c(1) and not c(0);
 
 
 end architecture docontrolstuff;
