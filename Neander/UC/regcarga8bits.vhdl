@@ -34,6 +34,6 @@ architecture reg8bits of regcarga8bits is
         u_reg5 : regcarga port map(d(5), clk, pr, cl, nrw, s(5));
         u_reg6 : regcarga port map(d(6), clk, pr, cl, nrw, s(6));
         u_reg7 : regcarga port map(d(7), clk, pr, cl, nrw, s(7));
-        -- como alternativa e sugestão, é possível trocar as 8 linhas anteriores
-        -- por um generate do VHDL!
+        --como alternativa e sugestão, é possível trocar as 8 linhas anteriores
+        --por um generate do VHDL!
     end architecture;
