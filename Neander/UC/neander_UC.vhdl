@@ -45,13 +45,13 @@ architecture docontrolstuff of moduloUC is
         );
     end component;
 
-    component LDA is 
+    component cicloLda is 
         port(
             counter : in std_logic_vector(2 downto 0);
-            s : out std_logic_vector(7 downto 0);
+            s : out std_logic_vector(10 downto 0);
             --signal b_ctrl 
         );
-    end component LDA;
+    end component cicloLda;
     
 
     -- componente UC-interno
@@ -71,8 +71,10 @@ architecture docontrolstuff of moduloUC is
     signal s_ciclo : std_logic_vector(2 downto 0) := (others => 'Z');
 
     signal s_ri2dec : std_logic_vector(7 downto 0) := (others => 'Z');
-
+    
     -- nop, sta, lda, add, or, and, not, jmp, jn, jz, hlt
+    signal s_nop, s_sta, s_lda, s_add, s_or, s_and, s_not, s_jmp, s_jn, s_jz, s_hlt : std_logic_vector(10 downto 0);
+
     signal s_dec2uc : std_logic_vector(10 downto 0) := (others => 'Z');
 
     signal s_bctrl  : std_logic_vector(10 downto 0) := (others => 'Z');
@@ -103,9 +105,8 @@ begin
     -- contador
     u_contador: contador port map(clk,rst,'1',s_ciclo);
 
-
     -- Unidade de Controle
-    s_bctrl <= sLDA when s_dec2uc = "00100000000" else --todas as outras instruções;
+    s_bctrl <= slda when s_dec2uc = "00100000000" else --todas as outras instruções;
 
     u_lda: LDA port map (s_ciclo,sLDA);
 
@@ -122,7 +123,7 @@ begin
     -- s(9) <= (c(2) and not (c(0)) or (not(c(2)) and not(c(1)) and c(0)))
     -- s(10) <= not c(2) and c(1) and not c(0);
 
-    s <= b_nop when sel_op = "10000000000" else
+    s_bctrl <= b_nop when sel_op = "10000000000" else
     b_sta when sel_op = "01000000000" else
     b_hlt when sel_op = "00000000001" else
     (others => 'Z');
