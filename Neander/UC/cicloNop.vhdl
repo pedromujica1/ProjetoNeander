@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity cicloNop is
+    port(
+        counter : in std_logic_vector(2 downto 0);
+        s : out std_logic_vector(10 downto 0);
+        );
+end entity cicloNop;
+
+architecture arch of cicloNop is
+
+begin
+
+    s(10) <=  '1'; --barrINC
+    s(9) <= '1' --barrPC
+    s(8 downto 6) <= "000";
+    s(5) <= not(c(1)) and not(c(2)) and c(0); --PC_NRW
+    s(4) <= '0'; --AC_NRW é nula
+    s(3) <= '0'; --MEM_NRW é nula
+    s(2) <= not(c(1)) and not(c(2)) and not(c(0)); --rem_nrw tem um valor 1 então (nega todos) 
+    s(1) <= not(c(1)) and not(c(2)) and c(0);  --RDM_NRW mesma tabela que PC
+    s(0) <= not(c(2)) and not(c(0)) and c(1); --RI_NRW
+end arch;
