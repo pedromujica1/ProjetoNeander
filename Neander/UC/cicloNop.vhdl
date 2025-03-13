@@ -18,7 +18,7 @@ begin
     s(5) <= not(c(1)) and not(c(2)) and c(0); --PC_NRW
     s(4) <= '0'; --AC_NRW é nula
     s(3) <= '0'; --MEM_NRW é nula
-    s(2) <= not(c(1)) and not(c(2)) and not(c(0)); --rem_nrw tem um valor 1 então (nega todos) 
+    s(2) <= not(c(1)) and not(c(2)) and not(c(0)); --rem_nrw tem um valor 1 
     s(1) <= not(c(1)) and not(c(2)) and c(0);  --RDM_NRW mesma tabela que PC
-    s(0) <= not(c(2)) and not(c(0)) and c(1); --RI_NRW
+    s(0) <= not(c(2)) and not(c(0)) and c(1); --RI_NRW tem 1
 end arch;
