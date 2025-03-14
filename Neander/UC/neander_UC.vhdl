@@ -48,7 +48,7 @@ architecture docontrolstuff of moduloUC is
     component cicloLda is 
         port(
             counter : in std_logic_vector(2 downto 0);
-            s : out std_logic_vector(10 downto 0);
+            s : out std_logic_vector(10 downto 0)
             --signal b_ctrl 
         );
     end component cicloLda;
@@ -100,15 +100,15 @@ begin
     "00000001000" when s_ri2dec = "10000000" else -- JMP
     "00000000100" when s_ri2dec = "10010000" else -- JN
     "00000000010" when s_ri2dec = "10100000" else -- JZ
-    "00000000001" when s_ri2dec = "11110000" -- HLT
+    "00000000001" when s_ri2dec = "11110000"; -- HLT
 
     -- contador
     u_contador: contador port map(clk,rst,'1',s_ciclo);
 
     -- Unidade de Controle
-    s_bctrl <= slda when s_dec2uc = "00100000000" else --todas as outras instruções;
+    s_bctrl <= slda when s_dec2uc = "00100000000" ; --todas as outras instruções;
 
-    u_lda: LDA port map (s_ciclo,sLDA);
+    u_lda : cicloLda port map (s_ciclo,sLDA);
 
     --arquivo LDA
     
