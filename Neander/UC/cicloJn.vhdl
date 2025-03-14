@@ -21,5 +21,6 @@ begin
     s(2) <= '0' --rem_nrw
     s(1) <= '0'  --RDM_NRW
     s(0) <= '0'; --RI_NRW
+    
 
 end arch;
