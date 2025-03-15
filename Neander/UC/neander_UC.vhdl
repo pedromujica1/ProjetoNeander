@@ -44,7 +44,7 @@ architecture docontrolstuff of moduloUC is
     
         );
     end component;
-
+    --cicloLDA
     component cicloLda is 
         port(
             counter : in std_logic_vector(2 downto 0);
@@ -52,8 +52,81 @@ architecture docontrolstuff of moduloUC is
             --signal b_ctrl 
         );
     end component cicloLda;
-    
+    --cicloADD
+    component cicloAdd is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloAdd;
+    --CICLOAND
+    component cicloAnd is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloAnd;
 
+    --CICLO HLT
+    component cicloHlt is
+    port(
+        counter : in std_logic_vector(2 downto 0);
+        s : out std_logic_vector(10 downto 0)
+        );
+    end component cicloHlt;
+    --CICLO JMP
+    component cicloJmp is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloJmp;
+    --CICLO JN
+    component cicloJn is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            nz      : in std_logic_vector(1 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloJn;
+    --CICLO JZ
+    component cicloJz is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            nz      : in std_logic_vector(1 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloJz;
+    --CICLO NOP
+    component cicloNop is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloNop;
+    --CICLO NOT
+    component cicloNot is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloNot;
+    
+    --CICLO OR
+    component cicloOr is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloOr;
+    --CICLO STA
+    component cicloSta is
+        port(
+            counter : in std_logic_vector(2 downto 0);
+            s : out std_logic_vector(10 downto 0)
+            );
+    end component cicloSta;
+    
     -- componente UC-interno
     component moduloPC is
         port(
@@ -105,27 +178,31 @@ begin
     -- contador
     u_contador: contador port map(clk,rst,'1',s_ciclo);
 
-    -- Unidade de Controle
-    s_bctrl <= slda when s_dec2uc = "00100000000" ; --todas as outras instruções;
+    --Ciclos das instruções
+    u_nop : cicloNop port map (s_ciclo,s_nop);
+    u_sta : cicloSta port map (s_ciclo,s_sta);
+    u_lda : cicloLda port map (s_ciclo,s_lda);
+    u_add : cicloAdd port map (s_ciclo,s_add);
+    u_and : cicloAnd port map (s_ciclo,s_and);
+    u_or : cicloOr port map (s_ciclo,s_or);
+    u_not : cicloNot port map (s_ciclo,s_not);
+    u_jmp : cicloJmp port map (s_ciclo,s_jmp);
+    u_jn : cicloJn port map (s_ciclo, flags_nz,s_jn);
+    u_jz : cicloJz port map (s_ciclo, flags_nz,s_jz);
+    u_hlt : cicloHlt port map (s_ciclo,s_hlt);
 
-    u_lda : cicloLda port map (s_ciclo,sLDA);
-
-    --arquivo LDA
-    
-
-    -- s(0) <=  '1'; --barrINC
-    -- s(1) <= not c(2) or c(2) or not c(9); --barrPC
-    -- s(4 downto 2) <= "000"; --ULA_OP
-    -- s(5) <= not (c(1))  and (c(2) xor c(0)); --PC_NRW
-    -- s(6) <= c(2) or c(1) or c(0); --AC_NRW
-    -- s(7) <= '0'; --MEM_NRW
-    -- s(8) <= (not c(1) and (c(2) xnor c(0))) or (not(c(2) and c(1) and c(0))) --rem_nrw
-    -- s(9) <= (c(2) and not (c(0)) or (not(c(2)) and not(c(1)) and c(0)))
-    -- s(10) <= not c(2) and c(1) and not c(0);
-
-    s_bctrl <= b_nop when sel_op = "10000000000" else
-    b_sta when sel_op = "01000000000" else
-    b_hlt when sel_op = "00000000001" else
-    (others => 'Z');
+    -- Unidade de Controle    
+    s_bctrl <=  s_nop when s_dec2uc = "10000000000" else
+                s_sta when s_dec2uc = "01000000000" else
+                s_lda when s_dec2uc = "00100000000" else
+                s_add when s_dec2uc = "00010000000" else
+                s_or  when s_dec2uc = "00001000000" else
+                s_and when s_dec2uc = "00000100000" else
+                s_not when s_dec2uc = "00000010000" else
+                s_jmp when s_dec2uc = "00000001000" else
+                s_jn  when s_dec2uc = "00000000100" else
+                s_jz  when s_dec2uc = "00000000010" else
+                s_hlt when s_dec2uc = "00000000001" else
+                (others => 'Z');
 
 end architecture docontrolstuff;

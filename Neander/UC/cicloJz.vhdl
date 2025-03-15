@@ -33,8 +33,8 @@ begin
     jmpFalse(1) <=  counter(0) and not(counter(1)) and not(counter(2)); --RDM_NRW
     jmpFalse(0) <= counter(1) and not(counter(0)) and not(counter(2)); --RI_NRW
     
-    s <= jmpTrue when nz(1) = '1' else jmpFalse;
-    --s <= jmpTrue when nz(1) = '1' else jmpFalse;
+    s <= jmpTrue when nz(1) = '1' else jmpFalse when nz(1) = '0' else 
+    (others => 'Z');
 
 
 end arch;
