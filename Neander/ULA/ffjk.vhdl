@@ -8,53 +8,49 @@ port(
     q, nq : out std_logic
 );
 end ffjk;
+
 architecture ff of ffjk is
-    signal s_snj , s_snk : std_logic;
-    signal s_sns , s_snr : std_logic;
-    signal s_sns2, s_snr2 : std_logic;
-    signal s_eloS, s_eloR : std_logic;
-    signal s_eloQ, s_elonQ: std_logic;
-    signal s_nClock : std_logic;
+    signal sq  : std_logic := '0';
+    signal snq : std_logic := '1';
 begin
-    s_nClock <= not(clock);
-    -- envio de saídas de NAND para Q e NQ
-    
-    -- s_snj <+ not(X and Y and Z)
-    s_snj <=(not(j and clock and s_elonQ));
-    -- NAND de 3 entradas? Faça not( X and Y and Z)
-    
-    -- s_snk
-    s_snk <= (not(clock and k and s_eloQ));
-    
-    -- s_sns
-    s_sns<= (not(pr and s_snj and s_eloR));
 
-    s_snr <= (not(cl and s_snk and s_eloS));
+    q  <= sq;
+    nq <= snq;
 
-    --Ligação entre o elo e o sinal
-    s_eloS <= s_sns;
-    s_eloR <= s_snr;
+    u_ff : process (clk, pr, cl)
+    begin
+        if (pr = '0') and (cl = '0') then
+            sq  <= 'X';
+            snq <= 'X';
+            elsif (pr = '1') and (cl = '0') then
+                sq  <= '0';
+                snq <= '1';
+                elsif (pr = '0') and (cl = '1') then
+                    sq  <= '1';
+                    snq <= '0';
+                    elsif (pr = '1') and (cl = '1') then
+                        if falling_edge(clk) then
+                            if    (j = '0') and (k = '0') then
+                                sq  <= sq;
+                                snq <= snq;
+                            elsif (j = '0') and (k = '1') then
+                                sq  <= '0';
+                                snq <= '1';
+                            elsif (j = '1') and (k = '0') then
+                                sq  <= '1';
+                                snq <= '0';
+                            elsif (j = '1') and (k = '1') then
+                                sq  <= not(sq);
+                                snq <= not(snq);
+                            else
+                                sq  <= 'U';
+                                snq <= 'U';
+                            end if;
+                        end if;
+            else
+                sq  <= 'X';
+                snq <= 'X';
+        end if;
+    end process;
 
-    --quinta NAND
-    s_sns2 <= not(s_sns and s_nClock);
-
-    --SEXTO NAND
-    s_snr2 <= not(s_snr and s_nClock);
-
-    --setimo NAND
-    s_eloQ <= not(pr and s_sns2 and s_elonQ);
-
-    --oitavo e ultimo nand
-    s_elonQ <= not(cl and s_snr2 and s_eloQ);
-
-    --Interligação  entre elo e saìda
-    q<= s_eloQ;
-    nq <= s_elonQ;
-    -- s_snr
-    -- s_sns2
-    -- s_snr2
-    -- s_eloS
-    -- s_eloR
-    -- s_eloQ
-    -- s_elonQ
-end architecture ff;
+end architecture;

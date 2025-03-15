@@ -49,16 +49,12 @@ architecture dopointstuff of moduloPC is
         ); 
     end component mux2x8;
 
-    
-
     signal sendereco, s_mux2pc : std_logic_vector(7 downto 0) := (others => 'Z');
     signal sadd, saddc, x, y   : std_logic_vector(7 downto 0) := (others => 'Z');
     signal s_um : std_logic_vector(7 downto 0) := "00000001";
     signal Cout_geral : std_logic;
 
 begin
-
-
     -- mux2x8
     u_mux2x8 : mux2x8 port map(barramento, sadd, nbarrINC , s_mux2pc );
     

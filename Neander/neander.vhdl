@@ -36,12 +36,36 @@ architecture docomputingstuff of NEANDER is
             barramento : inout std_logic_vector(7 downto 0)
         );
     end component moduloMEM;
+
+    --MODULO UC
+    component moduloUC is
+        port(
+            rst, clk   : in  std_logic;
+            barramento : in  std_logic_vector(7 downto 0);
+            RI_nrw     : in  std_logic;
+            flags_nz   : in  std_logic_vector(1 downto 0);
+            bctrl      : out std_logic_vector(10 downto 0)
+        );
+    end component moduloUC;
+
+    --MODULO PC
+    component moduloPC is
+        port(
+            rst, clk   : in  std_logic;
+            PC_nrw     : in  std_logic;
+            nbarrINC   : in    std_logic;
+            barramento : in  std_logic_vector(7 downto 0);
+            endereco   : out std_logic_vector(7 downto 0)
+        );
+    end component moduloPC;
+
     signal barramento : std_logic_vector(7 downto 0);
     signal s_endPC, s_endBarr : std_logic_vector(7 downto 0);
     signal flagsNZ : std_logic_vector(1 downto 0);
+
     begin
         u_ULA : moduloULA port map(rst, clk, AC_nrw,ula_op, MEM_nrw, flags_nz, barramento);
         u_MEMORIA : moduloMEM port map( nbarrPC, REM_nrw,MEM_nrw,RDM_nrw, RDM_nrw, s_endPC, s_endBarr <= barramento);
-
-    --component moduloULA is 
+        u_UC : moduloUC port map(rst,clk,s_endBarr,flagsNZ);
+        u_PC : moduloPC port map (rst,clk,)
 end architecture;
