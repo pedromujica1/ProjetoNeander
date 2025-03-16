@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 entity ffjk is
 port(
     j, k : in std_logic;
-    clock : in std_logic;
+    clk : in std_logic;
     pr, cl : in std_logic;
     q, nq : out std_logic
 );
