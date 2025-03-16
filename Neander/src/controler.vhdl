@@ -12,14 +12,6 @@ end entity;
 architecture controlar of controler is
     begin
         
-    --jj(0) <= '1';
-    --	kk(0) <= '1';
-	--
-	--jj(1) <= qq(0);
-	--kk(1) <= qq(0);
-	
-	--jj(2) <= qq(1) and qq(0);
-	--kk(2) <= qq(1) and qq(0);  
         j(0) <= '1';
         k(0) <= '1';
 

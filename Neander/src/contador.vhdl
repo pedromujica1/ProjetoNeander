@@ -28,16 +28,16 @@ architecture contar of contador is
 
     signal sj,sk: std_logic_vector (2 downto 0);
     signal sq, s_notq: std_logic_vector (2 downto 0);
+    signal preset_cont : std_logic := '1';
 
     begin
-
+        --Instanciando unidade controler
         u_controle : controler port map(sq, sj, sk);
-
         -- Instanciando os Flip-Flops JK
-        u_ffjk0 : ffjk port map(sj(0), sk(0), clock_cont, reset_cont, pr_cont, sq(0),s_notq(0) );
-        u_ffjk1 : ffjk port map(sj(1), sk(1), clock_cont, pr_cont, reset_cont, sq(1),s_notq(1) );
-        u_ffjk2 : ffjk port map(sj(2), sk(2), clock_cont, pr_cont, reset_cont, sq(2),s_notq(2) );
-
+        u_ffjk0 : ffjk port map(sj(0), sk(0), clock_cont, preset_cont, reset_cont, sq(0),s_notq(0));
+        u_ffjk1 : ffjk port map(sj(1), sk(1), clock_cont, preset_cont, reset_cont, sq(1),s_notq(1));
+        u_ffjk2 : ffjk port map(sj(2), sk(2), clock_cont, preset_cont, reset_cont, sq(2),s_notq(2));
+        
         q_cont <= sq;
 
 end architecture;

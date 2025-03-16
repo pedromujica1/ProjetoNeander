@@ -23,7 +23,6 @@ architecture dostoragestuff of moduloMEM is
             pr, cl : in std_logic;
             nrw : in std_logic;
             s : out std_logic_vector (7 downto 0)
-            
         );
     end component;
 
@@ -52,14 +51,14 @@ architecture dostoragestuff of moduloMEM is
 begin
 
     -- mux2x8
-    u_mux2x8 : mux2x8 port map(end_PC,end_Barr,nbarrPC,s_mux2rem );
+    u_mux2x8 : mux2x8 port map(end_Barr,end_PC,nbarrPC,s_mux2rem );
 
     -- registrador REM
     --present e clear (d/clk/pr/cl/nrw/saida)
     u_regREM: regcarga8bits port map(s_mux2rem,clk,'1',rst,REM_nrw,s_rem2mem);
     
     --Memória (addr/data//notrw/reset)
-    u_memory : as_ram port map(s_mux2rem,s_mem2rdm,MEM_nrw,rst);
+    u_memory : as_ram port map(s_rem2mem,s_mem2rdm,MEM_nrw,rst);
 
     --registrador RDM
     u_regRDM: regcarga8bits port map(s_mem2rdm,clk,'1',rst,RDM_nrw,s_rdm2barr);
