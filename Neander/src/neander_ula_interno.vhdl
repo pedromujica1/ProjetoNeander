@@ -82,6 +82,6 @@ begin
     flags_nz <= "10" when ssMux(7) = '1' else
     "01" when (ssMux = "00000000") else "00";
 
-    s <= ssMux;
+    s <= ssMux; --Recebendo saída
 
 end architecture domathstuff;

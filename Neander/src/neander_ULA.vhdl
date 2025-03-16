@@ -63,5 +63,6 @@ begin
     u_registradorFLAGS : regcarga2bits port map(s_ula2flags,clk,'1',rst,AC_nrw,flags_nz);
         
     barramento <= s_ac2ula when MEM_nrw='1' else (others => 'Z');--mux2x8z especial
+    
 end architecture domathstuff;
 
