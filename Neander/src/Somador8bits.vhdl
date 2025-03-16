@@ -32,8 +32,4 @@ architecture comportamento of Somador8bits is
         u_somador5: somadorCompleto port map (x(5), y(5), s_carry(4), s(5), s_carry(5));
         u_somador6: somadorCompleto port map (x(6), y(6), s_carry(5), s(6), s_carry(6));
         u_somador7: somadorCompleto port map (x(7), y(7), s_carry(6), s(7), Cout_geral);
-        
 end architecture;
-
-
-    
