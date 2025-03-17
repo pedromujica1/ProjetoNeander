@@ -24,19 +24,10 @@ architecture docontrolstuff of moduloUC is
             
         );
     end component;
-
-
     -- componente DECODE
     -- on code!
     
     -- componente Contador0-7
-    component moduloContador is
-	    port(
-            rst, clk : in  std_logic;
-	        counter  : out std_logic_vector(2 downto 0)
-	    );
-    end component;
-
     component contador is
         port(
             clock_cont, reset_cont, pr_cont: in std_logic;        
@@ -204,5 +195,6 @@ begin
                 s_jz  when s_dec2uc = "00000000010" else
                 s_hlt when s_dec2uc = "00000000001" else
                 (others => 'Z');
+    bctrl <= s_bctrl; 
 
 end architecture docontrolstuff;

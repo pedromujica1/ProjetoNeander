@@ -1,4 +1,4 @@
--- neander módulo principal ULA ===============================================
+-- neander módulo principal ULA ===============================
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -56,13 +56,13 @@ begin
     -- registrador AC
     u_registradorAC : regcarga8bits port map(s_ula2ac,clk,'1',rst,AC_nrw,s_ac2ula);
 
-    -- registrador FLAGS
-    u_registradorFLAGS : regcarga2bits port map(s_ula2flags,clk,'1',rst,AC_nrw,flags_nz);
-        
-    barramento <= s_ac2ula when MEM_nrw='1' else (others => 'Z');
-
     -- modulo ULA interno
     u_ULAinterno : moduloULAinterno port map(s_ac2ula,barramento,ula_op,s_ula2flags,s_ula2ac);
 
+    -- registrador FLAGS
+    u_registradorFLAGS : regcarga2bits port map(s_ula2flags,clk,'1',rst,AC_nrw,flags_nz);
+        
+    barramento <= s_ac2ula when MEM_nrw='1' else (others => 'Z');--mux2x8z especial
+    
 end architecture domathstuff;
 

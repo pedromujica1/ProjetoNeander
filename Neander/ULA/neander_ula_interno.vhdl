@@ -12,12 +12,6 @@ entity moduloULAinterno is
 end entity;
 
 architecture domathstuff of moduloULAinterno is
-
-    signal sand, sor, snot, slda, ss : std_logic_vector(7 downto 0);
-    signal sadd, saddc, sCout: std_logic_vector(7 downto 0);
-    signal cout_adder : std_logic;
-    signal s_nz : std_logic_vector(2 downto 0);
-    signal s_ulaOp : std_logic_vector (2 downto 0 );
     
     --Compoenent para realizar operações Lógicas (AND/NOT/OR)
     component OpLogicos8bits is
@@ -47,15 +41,21 @@ architecture domathstuff of moduloULAinterno is
         port (
             --Canais de 8 MUX 2x1 
             canal0: in std_logic_vector(7 downto 0); 
-            canal1: out std_logic_vector(7 downto 0); 
-            canal2: out std_logic_vector(7 downto 0); 
-            canal3: out std_logic_vector(7 downto 0);
-            canal4: out std_logic_vector(7 downto 0); 
+            canal1: in std_logic_vector(7 downto 0); 
+            canal2: in std_logic_vector(7 downto 0); 
+            canal3: in std_logic_vector(7 downto 0);
+            canal4: in std_logic_vector(7 downto 0); 
             seletor: in std_logic_vector (2 downto 0); 
             --1 saída Z para 8 MUX2x1
             Zc : out std_logic_vector(7 downto 0)
         ); 
     end component;
+
+    signal sand, sor, snot, slda, ssMux : std_logic_vector(7 downto 0);
+    signal sadd, saddc, sCout: std_logic_vector(7 downto 0);
+    signal cout_adder : std_logic;
+    signal s_nz : std_logic_vector(2 downto 0);
+    signal s_ulaOp : std_logic_vector (2 downto 0 );
 
 begin
 
@@ -63,7 +63,7 @@ begin
     u_operacoesLogicas : OpLogicos8bits port map(x,y,sand,sor,snot);
    
     -- LDA
-    slda<=y;
+    slda<=y; --MEM_DATA
     
     -- ADDER
     u_somador8bits : somador8bits port map(x,y,'0',sadd,cout_adder);
@@ -76,16 +76,12 @@ begin
     canal3  => sand, 
     canal4  => snot, 
     seletor => ula_op, 
-    Zc      => ss);
-    -- FLAGS
-
-    -- FLAG N
-    s_nz(0) <= ss(7);
-    flags_nz(0) <= s_nz(0);
-
-    -- FLAG Z
-    s_nz(1) <= '1' when ss = "00000000";
-    flags_nz(1) <= s_nz(1);
-
+    Zc      => ssMux);
     
+    -- FLAGS NZ
+    flags_nz <= "10" when ssMux(7) = '1' else
+    "01" when (ssMux = "00000000") else "00";
+
+    s <= ssMux; --Recebendo saída
+
 end architecture domathstuff;

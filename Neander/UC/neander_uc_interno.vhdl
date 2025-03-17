@@ -1,4 +1,4 @@
--- neander módulo secundario UC-PC ==================================
+---neander módulo secundario UC-PC ==================================
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -49,25 +49,22 @@ architecture dopointstuff of moduloPC is
         ); 
     end component mux2x8;
 
-    signal sendereco, s_mux2pc : std_logic_vector(7 downto 0) := (others => 'Z');
+    signal s_endereco, s_mux2pc : std_logic_vector(7 downto 0) := (others => 'Z');
     signal sadd, saddc, x, y   : std_logic_vector(7 downto 0) := (others => 'Z');
     signal s_um : std_logic_vector(7 downto 0) := "00000001";
     signal Cout_geral : std_logic;
 
 begin
-    -- mux2x8
-    u_mux2x8 : mux2x8 port map(barramento, sadd, nbarrINC , s_mux2pc );
-    
-    -- registrador PC
-    u_regcarga8: regcarga8bits port map (s_mux2pc,clk,'1',rst,PC_nrw,sendereco);
-    endereco <= sendereco;
 
     -- incrementador
-    x <= sendereco;
+    x <= s_endereco;
     y <= s_um;
-
+ 
     -- ADDER
-    u_somador : Somador8bits port map (x,y,'0', sadd,COut_geral );
-
-
+    u_somador : Somador8bits port map (s_um,s_endereco,'0', sadd,Cout_geral );
+    -- mux2x8
+    u_mux2x8 : mux2x8 port map(barramento, sadd, nbarrINC , s_mux2pc);
+    -- registrador PC
+    u_regcarga8: regcarga8bits port map (s_mux2pc,clk,'1',rst,PC_nrw,s_endereco);
+    endereco <= s_endereco;
 end architecture dopointstuff;
