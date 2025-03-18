@@ -113,17 +113,5 @@ architecture docomputingstuff of NEANDER is
             end_Barr    => sbarramento,
             barramento  => sbarramento
         );
-        --u_ULA : moduloULA port map(rst, clk, barramentoControle(4),barramentoControle(8 downto 6), barramentocontrole(3), flags_nz, barramento);
-        --u_MEMORIA : moduloMEM port map(nbarrPC, REM_nrw,MEM_nrw,RDM_nrw, RDM_nrw, s_endPC, s_endBarr <= barramento);
-        --u_UC : moduloUC port map(rst,clk,s_endBarr,flagsNZ);
-        --u_PC : moduloPC port map (rst,clk,)
+        
 end architecture;
---signal sbarramento : std_logic_vector(7 downto 0) := (others => '0');
---signal sbarramentocontrole : std_logic_vector(10 downto 0) := (others => '0');
---signal flags2uc : std_logic_vector(1 downto 0);
---signal spc2endpc : std_logic_vector(7 downto 0);
-
---superula : moduloULA port map(rst, clk, sbarramentocontrole(4), sbarramentocontrole(8 downto 6), sbarramentocontrole(3), flags2uc, sbarramento);
---supermem : moduloMEM port map(rst, clk, sbarramentocontrole(9), sbarramentocontrole(2), --sbarramentocontrole(3), sbarramentocontrole(1), spc2endpc, sbarramento, sbarramento);
---superuc : modulouc port map(sbarramento, flags2uc, rst, clk, sbarramentocontrole(0), sbarramentocontrole);
---superpc : modulopc port map(sbarramento, clk, rst, sbarramentocontrole(10), sbarramentocontrole(5), spc2endpc);
