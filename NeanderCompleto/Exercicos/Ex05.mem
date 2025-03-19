@@ -1,0 +1,30 @@
+; contar = 1;
+; for(int i = 1; i <= n; ++i){
+;     contar = contar + 1; 
+; }   ; 
+
+lda 131 ; carrego o N   
+not     ; inverto os bits
+add 130 ; adiciono 1
+sta 131 ; N se torna -N 
+
+lda 128
+add 131
+jz 30
+
+lda 128 ; carrega 128 que é "contar" que já possui o valor 1 na primeira execução
+add 130 ; add 1 no acumulador (contar + 1)
+sta 128 ; salva "contar + 1" no endereço de "contar" atualizando seu valor
+
+lda 129 ; carrego o i (nessa verificação só funcionará na primeira execução quando n = 1) 
+add 131 ; verifico se i = n (para o caso de n = 1 e já ter executado pelo menos 1 vez)
+jz 26   ; fim pq deu zero (n =1 e i = 1)
+
+lda 129 ; carrego novamente o valor de i
+add 130 ; adiciono 1 (++i)
+sta 129 ; salvo o valor novo de i 
+
+add 131 ; como o i ainda está no acumulador, subtraio dele o N (somo o -N)
+jz 26   ; fim,
+jmp 11  ; laço continua
+hlt     ; fim, termina a execução do programa
