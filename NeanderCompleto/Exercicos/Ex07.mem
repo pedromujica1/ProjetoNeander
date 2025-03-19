@@ -1,0 +1,24 @@
+;128 : primeiro
+;129 : i ; n - 1
+;130 : Nessimo
+;131 : razao
+;132 : 1
+
+lda 129 ; carrego o n - 1       (2)
+not     ; inverto os bits       
+add 132 ; somo 1
+sta 129 ; armazeno o -(n - 1)  (-2)
+
+lda 128 ; #inicio_do_laco, carrego o primeiro   (10)
+add 131 ; adiciono a razao                      (12)
+sta 128 ; armazeno em primeiro                  (128 = 12)
+
+lda 129 ; carrego o i                           (-1) //a
+add 132 ; somo 1                                 (0)   
+sta 129 ; armazeno o novo i                     (129 = 0)
+jz 22   ; #fim se i = 0, nao repete o laço, encerra 0
+jmp 12  ; #inicio_do_laco                        (12)
+
+lda 128 ; #fim, carrego o primeiro que é onde estou salvando a progressão (12)
+sta 130 ; salvo no Nessimo              (130 = 12)
+hlt     ; encerra a execução             

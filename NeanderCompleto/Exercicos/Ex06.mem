@@ -1,0 +1,32 @@
+; for( int i = 1; i <= multiplicador; ++i){
+;     multiplicando = multiplicando + multiplicando
+; }
+
+lda 129 ; carrego o multiplicador
+jz #fim_se_zero; se for zero, vai pro fim pq eh zero
+lda 128 ; carrego o multiplicando
+jz #fim_se_zero ; se for zero vai pro fim pq eh zero
+
+lda 129 ; carrego o multiplicador
+not     ; inverto os bits
+add 131 ; adiciono 1
+sta 129 ; multiplicador se torna negativo para comparações posteriores
+
+lda 132 ; carrega 132 que é um auxiliar (começa zerado)
+add 128 ; add o multiplicando 
+sta 132 ; salva o multiplicando + auxiliar no auxiliar
+
+lda 130 ; carrego o i  
+add 129 ; verifico se i = multiplicador 
+jz 28   ; #fim_normal
+
+lda 130 ; carrego novamente o valor de i
+add 131 ; adiciono 1 (++i)
+sta 130 ; salvo o valor novo de i 
+jmp 15  ; laço continua
+
+hlt     ; fim, termina a execução do programa
+
+; fim_se_zero
+str 128 ; carrego o zero no multiplicando
+hlt
