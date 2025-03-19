@@ -20,7 +20,8 @@ architecture arch of cicloJz is
 
 begin
 
-    u_jmp : cicloJmp port map(counter,jmpTrue);
+    
+    
 
     jmpFalse(10) <=  '1'; --barrINC
     jmpFalse(9) <= '1'; --barrPC
@@ -33,7 +34,9 @@ begin
     jmpFalse(1) <=  counter(0) and not(counter(1)) and not(counter(2)); --RDM_NRW
     jmpFalse(0) <= counter(1) and not(counter(0)) and not(counter(2)); --RI_NRW
     
-    s <= jmpTrue when nz(1) = '1' else jmpFalse when nz(1) = '0';
+    u_jmp : cicloJmp port map(counter,jmpTrue);
+    s <= jmpTrue when nz(1) = '1' else jmpFalse when nz(0) = '0';
+    
 
 
 end arch;
