@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Thu Mar 20 22:51:56 2025
+[*]
+[dumpfile] "/home/pedro-mujica/ProjetoNeander/NeanderCompleto/Simulacoes/Ex2.ghw"
+[dumpfile_mtime] "Wed Mar 19 21:22:02 2025"
+[dumpfile_size] 44305
+[savefile] "/home/pedro-mujica/ProjetoNeander/NeanderCompleto/Simulacoes/ex2.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-30.054708 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb_neander.
+[treeopen] top.tb_neander.u_neander.
+[treeopen] top.tb_neander.u_neander.u_memoria.
+[treeopen] top.tb_neander.u_neander.u_memoria.u_memory.
+[treeopen] top.tb_neander.u_neander.u_memoria.u_memory.ram.
+[treeopen] top.tb_neander.u_neander.u_ula.
+[sst_width] 278
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 157
+@421
+#{top.tb_neander.u_neander.sbarramento[7:0]} top.tb_neander.u_neander.sbarramento[7] top.tb_neander.u_neander.sbarramento[6] top.tb_neander.u_neander.sbarramento[5] top.tb_neander.u_neander.sbarramento[4] top.tb_neander.u_neander.sbarramento[3] top.tb_neander.u_neander.sbarramento[2] top.tb_neander.u_neander.sbarramento[1] top.tb_neander.u_neander.sbarramento[0]
+#{top.tb_neander.u_neander.u_ula.s_ac2ula[7:0]} top.tb_neander.u_neander.u_ula.s_ac2ula[7] top.tb_neander.u_neander.u_ula.s_ac2ula[6] top.tb_neander.u_neander.u_ula.s_ac2ula[5] top.tb_neander.u_neander.u_ula.s_ac2ula[4] top.tb_neander.u_neander.u_ula.s_ac2ula[3] top.tb_neander.u_neander.u_ula.s_ac2ula[2] top.tb_neander.u_neander.u_ula.s_ac2ula[1] top.tb_neander.u_neander.u_ula.s_ac2ula[0]
+#{top.tb_neander.u_neander.u_memoria.u_memory.ram[128][7:0]} top.tb_neander.u_neander.u_memoria.u_memory.ram[128][7] top.tb_neander.u_neander.u_memoria.u_memory.ram[128][6] top.tb_neander.u_neander.u_memoria.u_memory.ram[128][5] top.tb_neander.u_neander.u_memoria.u_memory.ram[128][4] top.tb_neander.u_neander.u_memoria.u_memory.ram[128][3] top.tb_neander.u_neander.u_memoria.u_memory.ram[128][2] top.tb_neander.u_neander.u_memoria.u_memory.ram[128][1] top.tb_neander.u_neander.u_memoria.u_memory.ram[128][0]
+#{top.tb_neander.u_neander.u_memoria.u_memory.ram[129][7:0]} top.tb_neander.u_neander.u_memoria.u_memory.ram[129][7] top.tb_neander.u_neander.u_memoria.u_memory.ram[129][6] top.tb_neander.u_neander.u_memoria.u_memory.ram[129][5] top.tb_neander.u_neander.u_memoria.u_memory.ram[129][4] top.tb_neander.u_neander.u_memoria.u_memory.ram[129][3] top.tb_neander.u_neander.u_memoria.u_memory.ram[129][2] top.tb_neander.u_neander.u_memoria.u_memory.ram[129][1] top.tb_neander.u_neander.u_memoria.u_memory.ram[129][0]
+[pattern_trace] 1
+[pattern_trace] 0

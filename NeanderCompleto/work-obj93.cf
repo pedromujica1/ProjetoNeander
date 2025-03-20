@@ -1,100 +1,100 @@
 v 4
-file . "cicloOr.vhdl" "915467deb03c52de7ab4df59cf7ebe3bea6471b0" "20250319174341.189":
-  entity cicloor at 1( 0) + 0 on 1075;
-  architecture arch of cicloor at 11( 201) + 0 on 1076;
-file . "NEANDER_tb.vhdl" "d0f083c0a35ab5c863ef18233ebfa58aceb4da28" "20250319174341.194":
-  entity tb_neander at 3( 160) + 0 on 1095;
-  architecture letsdothis of tb_neander at 9( 249) + 0 on 1096;
-file . "tb_as_ram.vhdl" "bfefe731229ad8ce9415f071d736bf321b0ab039" "20250319174341.200":
-  entity tb_as_ram at 1( 0) + 0 on 1119;
-  architecture tb_behavior of tb_as_ram at 9( 126) + 0 on 1120;
-file . "somadorCompleto.vhdl" "456eb9dbc3550d352738de7d6ad5ebdc2cbcd96e" "20250319174341.200":
-  entity somadorcompleto at 1( 0) + 0 on 1117;
-  architecture soma of somadorcompleto at 10( 163) + 0 on 1118;
-file . "Somador8bits.vhdl" "c0920bfecb89a64fd1f0a319bb00a84406abe7b5" "20250319174341.200":
-  entity somador8bits at 1( 0) + 0 on 1115;
-  architecture comportamento of somador8bits at 15( 391) + 0 on 1116;
-file . "regcarga.vhdl" "0c96d74355f627d4c4d18bc3d34a01c9fdd29d8d" "20250319174341.199":
-  entity regcarga at 1( 0) + 0 on 1113;
-  architecture reg1bit of regcarga at 14( 204) + 0 on 1114;
-file . "regcarga8bits.vhdl" "8400a8ac7852dad030b604da36e5c3f149b175fe" "20250319174341.199":
-  entity regcarga8bits at 1( 0) + 0 on 1111;
-  architecture reg8bits of regcarga8bits at 15( 286) + 0 on 1112;
-file . "regcarga2bits.vhdl" "8c42926c70e51fe4f8a2a63702bd8db5bd35ad02" "20250319174341.198":
-  entity regcarga2bits at 1( 0) + 0 on 1109;
-  architecture reg2bits of regcarga2bits at 15( 282) + 0 on 1110;
-file . "OpLogicos8bits.vhdl" "55fc7b5284d4c6cd80f3dc92a60d0b4f3cf5fc32" "20250319174341.198":
-  entity oplogicos8bits at 1( 0) + 0 on 1107;
-  architecture comportamento of oplogicos8bits at 14( 365) + 0 on 1108;
-file . "neander.vhdl" "6ffb16160eb4a49cdde6795051c28791b6d28660" "20250319174341.198":
-  entity neander at 1( 0) + 0 on 1105;
-  architecture docomputingstuff of neander at 12( 188) + 0 on 1106;
-file . "neander_ULA.vhdl" "601e1024e5176079de096b2900b26b9e44f50f45" "20250319174341.197":
-  entity moduloula at 2( 66) + 0 on 1103;
-  architecture domathstuff of moduloula at 16( 462) + 0 on 1104;
-file . "neander_ula_interno.vhdl" "5857ad8bac2957e5ae4c1c27b1201ee7a3af3696" "20250319174341.196":
-  entity moduloulainterno at 2( 82) + 0 on 1101;
-  architecture domathstuff of moduloulainterno at 14( 412) + 0 on 1102;
-file . "neander_UC.vhdl" "9aae9d57eda88480086eb086650471d5b9478cf0" "20250319174341.196":
-  entity modulouc at 2( 80) + 0 on 1099;
-  architecture docontrolstuff of modulouc at 15( 410) + 0 on 1100;
-file . "neander_uc_interno.vhdl" "188995c77df591c3d1ee96083e4cd4c1697272fa" "20250319174341.195":
-  entity modulopc at 2( 71) + 0 on 1097;
-  architecture dopointstuff of modulopc at 15( 383) + 0 on 1098;
-file . "neander_MEMORIA.vhdl" "33fe9e51196cd3b099a48452c1d302568e1f1faf" "20250319174341.193":
-  entity modulomem at 1( 0) + 0 on 1093;
-  architecture dostoragestuff of modulomem at 17( 459) + 0 on 1094;
-file . "mux5x8.vhdl" "6c22a95e3070078e85e40f80ad2d812406acb446" "20250319174341.193":
-  entity mux5x8 at 1( 0) + 0 on 1091;
-  architecture comutacao of mux5x8 at 18( 512) + 0 on 1092;
-file . "mux2x8.vhdl" "416a4ddc9cc024f278ccd301f795b45cf499f9d9" "20250319174341.192":
-  entity mux2x8 at 1( 0) + 0 on 1089;
-  architecture comutacao of mux2x8 at 14( 310) + 0 on 1090;
-file . "mux2x1.vhdl" "bce8610ed8dc6fe6318796ab4b7cd019449d0501" "20250319174341.192":
-  entity mux2x1 at 1( 0) + 0 on 1087;
-  architecture comutacao of mux2x1 at 14( 249) + 0 on 1088;
-file . "ffjk.vhdl" "4027fe167c1695e8f4c2a7db57c4646d3f9868ec" "20250319174341.192":
-  entity ffjk at 1( 0) + 0 on 1085;
-  architecture ff of ffjk at 12( 180) + 0 on 1086;
-file . "ffjkD.vhdl" "883b21c221472b6808be3f4fbf30553efb453857" "20250319174341.191":
-  entity ffjkd at 1( 0) + 0 on 1083;
-  architecture ffd of ffjkd at 13( 187) + 0 on 1084;
-file . "controler.vhdl" "32af55fd2408a351d4dbf083354f46d012898771" "20250319174341.190":
-  entity controler at 1( 0) + 0 on 1081;
-  architecture controlar of controler at 12( 197) + 0 on 1082;
-file . "contador.vhdl" "3eca3c0ce34e377ae3cda06133307ad0cca0a5fc" "20250319174341.190":
-  entity contador at 1( 0) + 0 on 1079;
-  architecture contar of contador at 12( 207) + 0 on 1080;
-file . "cicloSta.vhdl" "e553873e919c5e9d592b561fd0a1e9644348d784" "20250319174341.189":
-  entity ciclosta at 1( 0) + 0 on 1077;
-  architecture arch of ciclosta at 11( 203) + 0 on 1078;
-file . "cicloNot.vhdl" "6f063498b0d12141ac9ad055aa6ee701dde8f298" "20250319174341.188":
-  entity ciclonot at 1( 0) + 0 on 1073;
-  architecture arch of ciclonot at 11( 203) + 0 on 1074;
-file . "cicloNop.vhdl" "e1e7c7ad09fa521a1450d773b3e7e8a8d39aeb8b" "20250319174341.187":
-  entity ciclonop at 1( 0) + 0 on 1071;
-  architecture arch of ciclonop at 11( 203) + 0 on 1072;
-file . "cicloLda.vhdl" "fd830a0af51943c6f7042d18652909f90734cb70" "20250319174341.187":
-  entity ciclolda at 1( 0) + 0 on 1069;
-  architecture arch of ciclolda at 11( 203) + 0 on 1070;
-file . "cicloJz.vhdl" "535dd534936dcc1d2d70b015120b38312174499a" "20250319174341.186":
-  entity ciclojz at 1( 0) + 0 on 1067;
-  architecture arch of ciclojz at 12( 252) + 0 on 1068;
-file . "cicloJn.vhdl" "36750f5d303b444452d704244c22e57d4173257f" "20250319174341.185":
-  entity ciclojn at 1( 0) + 0 on 1065;
-  architecture arch of ciclojn at 12( 252) + 0 on 1066;
-file . "cicloJmp.vhdl" "1b40da4a345405d8187c39ab7c096732bebb74d3" "20250319174341.184":
-  entity ciclojmp at 1( 0) + 0 on 1063;
-  architecture arch of ciclojmp at 11( 203) + 0 on 1064;
-file . "cicloHtl.vhdl" "eef6a2e3c7db8828f56fa0d969b4511e3c40f041" "20250319174341.183":
-  entity ciclohlt at 1( 0) + 0 on 1061;
-  architecture arch of ciclohlt at 11( 203) + 0 on 1062;
-file . "cicloAnd.vhdl" "668f384b72caafe2d9953b9a54f86cf16f4896d3" "20250319174341.183":
-  entity cicloand at 1( 0) + 0 on 1059;
-  architecture arch of cicloand at 11( 203) + 0 on 1060;
-file . "cicloAdd.vhdl" "e06f4e25cf422567846c23a8debba48ca2d2932e" "20250319174341.182":
-  entity cicloadd at 1( 0) + 0 on 1057;
-  architecture arch of cicloadd at 11( 203) + 0 on 1058;
-file . "as_ram.vhdl" "3f73ba77f28abe495e9836860db5e4964f04d021" "20250319174341.180":
-  entity as_ram at 2( 42) + 0 on 1055;
-  architecture behavior of as_ram at 16( 325) + 0 on 1056;
+file . "cicloOr.vhdl" "915467deb03c52de7ab4df59cf7ebe3bea6471b0" "20250320230702.675":
+  entity cicloor at 1( 0) + 0 on 5563;
+  architecture arch of cicloor at 11( 201) + 0 on 5564;
+file . "NEANDER_tb.vhdl" "d0f083c0a35ab5c863ef18233ebfa58aceb4da28" "20250320230702.680":
+  entity tb_neander at 3( 160) + 0 on 5583;
+  architecture letsdothis of tb_neander at 9( 249) + 0 on 5584;
+file . "tb_as_ram.vhdl" "bfefe731229ad8ce9415f071d736bf321b0ab039" "20250320230702.685":
+  entity tb_as_ram at 1( 0) + 0 on 5607;
+  architecture tb_behavior of tb_as_ram at 9( 126) + 0 on 5608;
+file . "somadorCompleto.vhdl" "456eb9dbc3550d352738de7d6ad5ebdc2cbcd96e" "20250320230702.685":
+  entity somadorcompleto at 1( 0) + 0 on 5605;
+  architecture soma of somadorcompleto at 10( 163) + 0 on 5606;
+file . "Somador8bits.vhdl" "c0920bfecb89a64fd1f0a319bb00a84406abe7b5" "20250320230702.685":
+  entity somador8bits at 1( 0) + 0 on 5603;
+  architecture comportamento of somador8bits at 15( 391) + 0 on 5604;
+file . "regcarga.vhdl" "0c96d74355f627d4c4d18bc3d34a01c9fdd29d8d" "20250320230702.684":
+  entity regcarga at 1( 0) + 0 on 5601;
+  architecture reg1bit of regcarga at 14( 204) + 0 on 5602;
+file . "regcarga8bits.vhdl" "8400a8ac7852dad030b604da36e5c3f149b175fe" "20250320230702.684":
+  entity regcarga8bits at 1( 0) + 0 on 5599;
+  architecture reg8bits of regcarga8bits at 15( 286) + 0 on 5600;
+file . "regcarga2bits.vhdl" "8c42926c70e51fe4f8a2a63702bd8db5bd35ad02" "20250320230702.684":
+  entity regcarga2bits at 1( 0) + 0 on 5597;
+  architecture reg2bits of regcarga2bits at 15( 282) + 0 on 5598;
+file . "OpLogicos8bits.vhdl" "55fc7b5284d4c6cd80f3dc92a60d0b4f3cf5fc32" "20250320230702.683":
+  entity oplogicos8bits at 1( 0) + 0 on 5595;
+  architecture comportamento of oplogicos8bits at 14( 365) + 0 on 5596;
+file . "neander.vhdl" "6ffb16160eb4a49cdde6795051c28791b6d28660" "20250320230702.683":
+  entity neander at 1( 0) + 0 on 5593;
+  architecture docomputingstuff of neander at 12( 188) + 0 on 5594;
+file . "neander_ULA.vhdl" "601e1024e5176079de096b2900b26b9e44f50f45" "20250320230702.682":
+  entity moduloula at 2( 66) + 0 on 5591;
+  architecture domathstuff of moduloula at 16( 462) + 0 on 5592;
+file . "neander_ula_interno.vhdl" "5857ad8bac2957e5ae4c1c27b1201ee7a3af3696" "20250320230702.682":
+  entity moduloulainterno at 2( 82) + 0 on 5589;
+  architecture domathstuff of moduloulainterno at 14( 412) + 0 on 5590;
+file . "neander_UC.vhdl" "9aae9d57eda88480086eb086650471d5b9478cf0" "20250320230702.681":
+  entity modulouc at 2( 80) + 0 on 5587;
+  architecture docontrolstuff of modulouc at 15( 410) + 0 on 5588;
+file . "neander_uc_interno.vhdl" "188995c77df591c3d1ee96083e4cd4c1697272fa" "20250320230702.680":
+  entity modulopc at 2( 71) + 0 on 5585;
+  architecture dopointstuff of modulopc at 15( 383) + 0 on 5586;
+file . "neander_MEMORIA.vhdl" "33fe9e51196cd3b099a48452c1d302568e1f1faf" "20250320230702.679":
+  entity modulomem at 1( 0) + 0 on 5581;
+  architecture dostoragestuff of modulomem at 17( 459) + 0 on 5582;
+file . "mux5x8.vhdl" "6c22a95e3070078e85e40f80ad2d812406acb446" "20250320230702.679":
+  entity mux5x8 at 1( 0) + 0 on 5579;
+  architecture comutacao of mux5x8 at 18( 512) + 0 on 5580;
+file . "mux2x8.vhdl" "416a4ddc9cc024f278ccd301f795b45cf499f9d9" "20250320230702.678":
+  entity mux2x8 at 1( 0) + 0 on 5577;
+  architecture comutacao of mux2x8 at 14( 310) + 0 on 5578;
+file . "mux2x1.vhdl" "bce8610ed8dc6fe6318796ab4b7cd019449d0501" "20250320230702.678":
+  entity mux2x1 at 1( 0) + 0 on 5575;
+  architecture comutacao of mux2x1 at 14( 249) + 0 on 5576;
+file . "ffjk.vhdl" "4027fe167c1695e8f4c2a7db57c4646d3f9868ec" "20250320230702.678":
+  entity ffjk at 1( 0) + 0 on 5573;
+  architecture ff of ffjk at 12( 180) + 0 on 5574;
+file . "ffjkD.vhdl" "883b21c221472b6808be3f4fbf30553efb453857" "20250320230702.677":
+  entity ffjkd at 1( 0) + 0 on 5571;
+  architecture ffd of ffjkd at 13( 187) + 0 on 5572;
+file . "controler.vhdl" "32af55fd2408a351d4dbf083354f46d012898771" "20250320230702.677":
+  entity controler at 1( 0) + 0 on 5569;
+  architecture controlar of controler at 12( 197) + 0 on 5570;
+file . "contador.vhdl" "3eca3c0ce34e377ae3cda06133307ad0cca0a5fc" "20250320230702.677":
+  entity contador at 1( 0) + 0 on 5567;
+  architecture contar of contador at 12( 207) + 0 on 5568;
+file . "cicloSta.vhdl" "00e94eb0947ee2b5f2eb8407d830b11e09d821d6" "20250320230702.676":
+  entity ciclosta at 1( 0) + 0 on 5565;
+  architecture arch of ciclosta at 11( 203) + 0 on 5566;
+file . "cicloNot.vhdl" "6f063498b0d12141ac9ad055aa6ee701dde8f298" "20250320230702.675":
+  entity ciclonot at 1( 0) + 0 on 5561;
+  architecture arch of ciclonot at 11( 203) + 0 on 5562;
+file . "cicloNop.vhdl" "e1e7c7ad09fa521a1450d773b3e7e8a8d39aeb8b" "20250320230702.674":
+  entity ciclonop at 1( 0) + 0 on 5559;
+  architecture arch of ciclonop at 11( 203) + 0 on 5560;
+file . "cicloLda.vhdl" "fd830a0af51943c6f7042d18652909f90734cb70" "20250320230702.673":
+  entity ciclolda at 1( 0) + 0 on 5557;
+  architecture arch of ciclolda at 11( 203) + 0 on 5558;
+file . "cicloJz.vhdl" "0fe526451ada61a706cf6a54aa5fc445ecb448b7" "20250320230702.673":
+  entity ciclojz at 1( 0) + 0 on 5555;
+  architecture arch of ciclojz at 12( 252) + 0 on 5556;
+file . "cicloJn.vhdl" "36750f5d303b444452d704244c22e57d4173257f" "20250320230702.672":
+  entity ciclojn at 1( 0) + 0 on 5553;
+  architecture arch of ciclojn at 12( 252) + 0 on 5554;
+file . "cicloJmp.vhdl" "1b40da4a345405d8187c39ab7c096732bebb74d3" "20250320230702.671":
+  entity ciclojmp at 1( 0) + 0 on 5551;
+  architecture arch of ciclojmp at 11( 203) + 0 on 5552;
+file . "cicloHtl.vhdl" "eef6a2e3c7db8828f56fa0d969b4511e3c40f041" "20250320230702.670":
+  entity ciclohlt at 1( 0) + 0 on 5549;
+  architecture arch of ciclohlt at 11( 203) + 0 on 5550;
+file . "cicloAnd.vhdl" "668f384b72caafe2d9953b9a54f86cf16f4896d3" "20250320230702.670":
+  entity cicloand at 1( 0) + 0 on 5547;
+  architecture arch of cicloand at 11( 203) + 0 on 5548;
+file . "cicloAdd.vhdl" "e06f4e25cf422567846c23a8debba48ca2d2932e" "20250320230702.669":
+  entity cicloadd at 1( 0) + 0 on 5545;
+  architecture arch of cicloadd at 11( 203) + 0 on 5546;
+file . "as_ram.vhdl" "3f73ba77f28abe495e9836860db5e4964f04d021" "20250320230702.668":
+  entity as_ram at 2( 42) + 0 on 5543;
+  architecture behavior of as_ram at 16( 325) + 0 on 5544;
